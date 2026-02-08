@@ -58,6 +58,7 @@ services:
      - payment
       
 networks:
-   default: bridge
-   name: roboshop
-   external: false # true if you have created network manually using docker network command
+   default: 
+     driver: bridge
+     name: roboshop
+     external: false # true if you have created network manually using docker network command
