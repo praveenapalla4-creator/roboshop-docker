@@ -2,23 +2,33 @@ services:
    mongodb: #--name mongodb
       image: mongodb:v1
       container_name: mongodb
+      volumes:
+      - mongodb: /data/db # check this in mongo in docker hub  where it stroes volumes 
    catalogue:
       image: catalogue:v1
       container_name: catalogue
       depends_on:
       - mongodb
+    
    redis:
       image: redis:7.0
       container_name: redis
+      volumes:
+      - redis: /data
    mysql:
       image: mysql:v1
       container_name: mysql
+      volumes:
+      - mysql: /var/lib/mysql
    rabbitmq:
       image: rabbitmq:3
       container_name: rabbitmq
+      volumes: #= -v rabbitmq:/var/lib/rabbitmq
+      -rabbitmq: /var/lib/rabbitmq 
       environment:
         RABBITMQ_DEFAULT_USER: roboshop
         RABBITMQ_DEFAULT_PASS: roboshop123
+      
    user:
       image: user:v1
       container_name: user
@@ -62,3 +72,8 @@ networks:
      driver: bridge
      name: roboshop
      external: false # true if you have created network manually using docker network command
+volumes:
+   mongodb: # docker voulme create mongodb
+   redis:
+   mysql:
+   rabbitmq:
