@@ -22,8 +22,8 @@ ENV REDIS_HOST="redis" \
 #kavlsina content ni final image ki copy chesthunnam from 1
 COPY --from=build --chown=roboshop:roboshop /opt/server /opt/server
 USER roboshop
-CMD ["server.js"]
-ENTRYPOINT ["node"]
+CMD ["node", "server.js"]
+# ENTRYPOINT ["node"]
 
 
 # FROM node:20
