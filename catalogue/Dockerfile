@@ -14,7 +14,7 @@ RUN addgroup -S roboshop && adduser -S roboshop -G appgroup && \
  chown -R roboshop:roboshop /opt/server
 EXPOSE 8080
 LABEL com.project="roboshop" \
-      component= "catalogue" \
+      component="catalogue" \
       created_by="praveena"
 ENV MONGO="true" \
     MONGO_URL="mongodb://mongodb:27017/catalogue"
