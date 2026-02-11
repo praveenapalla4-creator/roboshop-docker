@@ -4,7 +4,7 @@ services:
       image: pallapraveena/mongodb:v1
       container_name: mongodb
       volumes:
-      - mongodb: /data/db # check this in mongo in docker hub  where it stroes volumes 
+      - mongodb:/data/db # check this in mongo in docker hub  where it stroes volumes 
    catalogue:
       build:
         context: ./catalogue
@@ -18,19 +18,19 @@ services:
       image: redis:7.0
       container_name: redis
       volumes:
-      - redis: /data
+      - redis:/data
    mysql:
       build: ./mysql
       image: pallapraveena/mysql:v1
       container_name: mysql
       volumes:
-      - mysql: /var/lib/mysql
+      - mysql:/var/lib/mysql
    rabbitmq:
       
       image: rabbitmq:3
       container_name: rabbitmq
       volumes: #= -v rabbitmq:/var/lib/rabbitmq
-      -rabbitmq: /var/lib/rabbitmq 
+      - rabbitmq:/var/lib/rabbitmq 
       environment:
         RABBITMQ_DEFAULT_USER: roboshop
         RABBITMQ_DEFAULT_PASS: roboshop123
