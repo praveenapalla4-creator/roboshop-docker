@@ -21,7 +21,7 @@ ENV MONGO="true" \
 #kavlsina content ni final image ki copy chesthunnam from 1
 COPY --from=build --chown=roboshop:roboshop /opt/server /opt/server
 USER roboshop
-CMD ["node", "server.js"]
+CMD ["server.js"]
 ENTRYPOINT ["node"]
 
 
