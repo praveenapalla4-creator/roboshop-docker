@@ -15,7 +15,7 @@ RUN addgroup -S roboshop && adduser -S roboshop -G appgroup && \
 EXPOSE 8080
 LABEL com.project="roboshop"\
       component= "catalogue"\
-      craeted_by="praveena"
+      created_by="praveena"
 ENV MONGO="true"\
     MONGO_URL="mongodb://mongodb:27017/catalogue"
 #kavlsina content ni final image ki copy chesthunnam from 1

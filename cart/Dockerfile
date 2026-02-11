@@ -15,7 +15,7 @@ RUN addgroup -S roboshop && adduser -S roboshop -G roboshop && \
 EXPOSE 8080
 LABEL com.project="roboshop"\
       component= "user"\
-      craeted_by="cart"
+      created_by="cart"
 ENV REDIS_HOST="redis"\
     CATALOGUE_HOST="catalogue"\
     CATALOGUE_PORT="8080"

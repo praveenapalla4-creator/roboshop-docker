@@ -15,7 +15,7 @@ RUN addgroup -S roboshop && adduser -S roboshop -G roboshop && \
 EXPOSE 8080
 LABEL com.project="roboshop"\
       component= "user"\
-      craeted_by="praveena"
+      created_by="praveena"
 ENV MONGO="true"\
     REDIS_URL="redis://redis:6379"\
     MONGO_URL="mongodb://mongodb:27017/users"
