@@ -2,7 +2,7 @@
 # stage 1: Builder(Alpine)
 # ==========================
 
-FROM python:3..9.25-alpine3.21 AS builder
+FROM python:3.9.25-alpine3.21 AS builder
 WORKDIR /opt/server/
 #build deps fro uwsgi & friends
 RUN apk add --no-cache \
