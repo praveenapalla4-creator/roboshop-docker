@@ -32,7 +32,7 @@ ENV CART_PORT="8080" \
     USER_HOST="cart" \
     USER_PORT="8080" \
     AMQP_HOST="rabbitmq" \
-    AMQP_USER="roboshop"\
+    AMQP_USER="roboshop" \
     AMQP_PASS="roboshop123"
 USER roboshop
 CMD ["uwsgi","--ini", "payment.ini"]

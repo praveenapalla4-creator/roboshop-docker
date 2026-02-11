@@ -13,11 +13,11 @@ WORKDIR /opt/server
 RUN addgroup -S roboshop && adduser -S roboshop -G roboshop && \
  chown -R roboshop:roboshop /opt/server
 EXPOSE 8080
-LABEL com.project="roboshop"\
-      component= "user"\
+LABEL com.project="roboshop" \
+      component= "user" \
       created_by="cart"
-ENV REDIS_HOST="redis"\
-    CATALOGUE_HOST="catalogue"\
+ENV REDIS_HOST="redis" \
+    CATALOGUE_HOST="catalogue" \
     CATALOGUE_PORT="8080"
 #kavlsina content ni final image ki copy chesthunnam from 1
 COPY --from=build --chown=roboshop:roboshop /opt/server /opt/server
