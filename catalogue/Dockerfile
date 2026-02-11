@@ -13,10 +13,10 @@ WORKDIR /opt/server
 RUN addgroup -S roboshop && adduser -S roboshop -G appgroup && \
  chown -R roboshop:roboshop /opt/server
 EXPOSE 8080
-LABEL com.project="roboshop"\
-      component= "catalogue"\
+LABEL com.project="roboshop" \
+      component= "catalogue" \
       created_by="praveena"
-ENV MONGO="true"\
+ENV MONGO="true" \
     MONGO_URL="mongodb://mongodb:27017/catalogue"
 #kavlsina content ni final image ki copy chesthunnam from 1
 COPY --from=build --chown=roboshop:roboshop /opt/server /opt/server
