@@ -28,8 +28,9 @@ RUN addgroup -S roboshop && adduser -S roboshop -G roboshop
 COPY --from=builder /install /usr/local
 # copy app files
 COPY --chown=roboshop:roboshop payment.ini *.py requirements.txt .
-ENV CART_PORT="8080" \
-    USER_HOST="cart" \
+ENV CART_HOST="cart" \
+    CART_PORT="8080" \
+    USER_HOST="user" \
     USER_PORT="8080" \
     AMQP_HOST="rabbitmq" \
     AMQP_USER="roboshop" \
